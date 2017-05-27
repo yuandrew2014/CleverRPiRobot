@@ -34,11 +34,24 @@ public class CleverRobot extends IRobotAdapter {
 	}
 
 	private boolean loop() throws Exception {
-		System.out.println("LEFT SONAR: " + sonar.readSonar("left"));
+		readSensors(100);
+	if (isLightBump()) {
+		driveDirect(0,0);
+		Thread.sleep(500);
+		driveDirect(-500,-500);
 		Thread.sleep(1000);
-		setTailLight(tailLight = !tailLight);
-		System.out.println("RIGHT SONAR: " + sonar.readSonar("right"));
-		System.out.println("CENTER SONAR: " + sonar.readSonar("center"));
+		driveDirect(500,0);
+		Thread.sleep(600);
+		driveDirect(500,500);
+	}
+	//if (isBumpRight()) {
+		//driveDirect(-500,-500);
+		//Thread.sleep(1000);
+		//driveDirect(0,500);
+		//Thread.sleep(600);
+		//driveDirect(500,500);
+	//}
+	
 
 		return true;
 	}
