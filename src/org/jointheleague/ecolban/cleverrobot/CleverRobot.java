@@ -37,20 +37,27 @@ public class CleverRobot extends IRobotAdapter {
 		readSensors(100);
 	if (isLightBump()) {
 		driveDirect(0,0);
-		Thread.sleep(500);
-		driveDirect(-500,-500);
+		Thread.sleep(700);
+		driveDirect(-700,-700);
 		Thread.sleep(1000);
-		driveDirect(500,0);
+		driveDirect(700,0);
 		Thread.sleep(600);
-		driveDirect(500,500);
+		driveDirect(700,700);
 	}
-	//if (isBumpRight()) {
-		//driveDirect(-500,-500);
-		//Thread.sleep(1000);
-		//driveDirect(0,500);
-		//Thread.sleep(600);
-		//driveDirect(500,500);
-	//}
+	if (isBumpRight()) {
+		driveDirect(-700,-700);
+		Thread.sleep(1000);
+		driveDirect(0,700);
+		Thread.sleep(600);
+		driveDirect(700,700);
+	}
+	if (isBumpRight()) {
+		driveDirect(-700,-700);
+		Thread.sleep(1000);
+		driveDirect(0,700);
+		Thread.sleep(600);
+		driveDirect(700,700);
+	}
 	
 
 		return true;
